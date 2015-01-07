@@ -1,0 +1,17 @@
+obj-y += soc_info.o
+obj-y += memory.o
+obj-y += reset.o
+lwl-y += setup_early_stack.o
+lwl-y += early_clock.o
+lwl-y += lowlevel-initcall.o
+lwl-y += ddrphy_training.o
+lwl-y += entry-common.o jump_to_arm_entry.o
+lwl-y += boot-device.o
+lwl-$(CONFIG_UNIPHIER_NOR_BOOT) += nor_load.o
+lwl-$(CONFIG_UNIPHIER_NAND_BOOT) += nand_load.o
+lwl-$(CONFIG_UNIPHIER_EMMC_BOOT) += emmc_load.o
+lwl-$(CONFIG_UNIPHIER_USB_BOOT) += usb_load.o
+
+obj-$(CONFIG_MACH_PH1_LD4)	+= ph1-ld4/
+obj-$(CONFIG_MACH_PH1_PRO4)	+= ph1-pro4/
+obj-$(CONFIG_MACH_PH1_SLD8)	+= ph1-sld8/

@@ -1,0 +1,89 @@
+if ARCH_UNIPHIER
+
+config MACH_PH1_LD4
+	bool "PH1-LD4"
+	default y
+	help
+	  PH1-LD4 support
+
+config MACH_PH1_PRO4
+	bool "PH1-Pro4"
+	default y
+	help
+	  PH1-Pro4 support
+
+config MACH_PH1_SLD8
+	bool "PH1-sLD8"
+	default y
+	help
+	  PH1-sLD8 support
+
+config MACH_PH1_PRO5
+	bool "PH1-Pro5"
+	default y
+	help
+	  PH1-sLD8 support
+
+config MACH_PH1_LD6B
+	bool "PH1-LD6b"
+	default y
+	help
+	  PH1-LD6b support
+
+config UNIPHIER_NOR_BOOT
+	bool "Support NOR Boot"
+	default y
+	help
+	  Support NOR Boot
+
+config UNIPHIER_NAND_BOOT
+	bool "Support NAND Boot"
+	default y
+	help
+	  Support NAND Boot
+
+config UNIPHIER_EMMC_BOOT
+	bool "Support EMMC Boot"
+	default y
+	help
+	  Support EMMC Boot
+
+config UNIPHIER_USB_BOOT
+	bool "Support USB Boot"
+	depends on MACH_PH1_SLD8
+	default y
+	help
+	  Support USB Boot
+
+config ARCH_TEXT_BASE
+	hex
+	default 0x80000000
+
+# The UniPhier ROM code always loads 64KB
+config ARCH_BAREBOX_MAX_PBL_SIZE
+	hex
+	default 0x100000
+
+# FIXME
+# We have no interest in the bare_init size,
+# but the link fails without the following.
+config ARCH_BAREBOX_MAX_BARE_INIT_SIZE
+	hex
+	default ARCH_BAREBOX_MAX_PBL_SIZE
+
+config DEBUG_UNIPHIER_UART_PORT
+	int "Debug UART port"
+	depends on DEBUG_LL
+	range 0 2
+	default 0
+	help
+	  Debug UART base address.
+
+config DEBUG_UNIPHIER_UART_BAUDRATE
+	int "Debug UART baudrate"
+	depends on DEBUG_LL
+	default 115200
+	help
+	  Debug UART baudrate.
+
+endif

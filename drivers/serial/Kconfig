@@ -137,4 +137,11 @@ config DRIVER_SERIAL_DIGIC
 	bool "Canon DIGIC serial driver"
 	depends on ARCH_DIGIC
 
+config SERIAL_UNIPHIER
+	bool "UniPhier on-chip UART support"
+	depends on ARCH_UNIPHIER
+	default y
+	help
+	  Support for the on-chip UARTs on the UniPhier platform.
+
 endmenu

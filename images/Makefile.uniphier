@@ -1,0 +1,17 @@
+define uniphier_images
+$(eval image-$($1) += $(patsubst %,barebox-%.img,$2)) \
+$(foreach i,$2,\
+$(eval FILE_barebox-$i.img := start_$(subst -,_,$i).pblx))
+endef
+
+# PH1-LD4
+$(call uniphier_images,CONFIG_MACH_PH1_LD4, uniphier-ph1-ld4-ref-2g2g \
+					    uniphier-ph1-ld4-ref-1g1g)
+
+# PH1-PRO4
+$(call uniphier_images,CONFIG_MACH_PH1_PRO4, uniphier-ph1-pro4-ref)
+
+# PH1-SLD8
+$(call uniphier_images,CONFIG_MACH_PH1_SLD8, uniphier-ph1-sld8-ref)
+
+pblx-y := $(patsubst %.pblx,%, $(foreach i, $(image-y), $(FILE_$i)))

@@ -237,6 +237,12 @@ config ARCH_UEMD
 	select CLOCKSOURCE_UEMD
 	select HAS_DEBUG_LL
 
+config ARCH_UNIPHIER
+	bool "Panasonic UniPhier Platform"
+	select CPU_V7
+	select HAS_DEBUG_LL
+	select HAVE_PBL_MULTI_IMAGES
+
 config ARCH_ZYNQ
 	bool "Xilinx Zynq-based boards"
 	select HAS_DEBUG_LL
@@ -265,6 +271,7 @@ source arch/arm/mach-versatile/Kconfig
 source arch/arm/mach-vexpress/Kconfig
 source arch/arm/mach-tegra/Kconfig
 source arch/arm/mach-uemd/Kconfig
+source arch/arm/mach-uniphier/Kconfig
 source arch/arm/mach-zynq/Kconfig
 
 config ARM_ASM_UNIFIED
