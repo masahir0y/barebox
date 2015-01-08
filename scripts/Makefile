@@ -6,7 +6,7 @@
 
 hostprogs-y                      += bin2c
 hostprogs-y                      += mkimage
-hostprogs-y                      += fix_size
+hostprogs-$(CONFIG_PBL_IMAGE)    += fix_size
 hostprogs-y                      += bareboxenv
 hostprogs-y                      += bareboxcrc32
 hostprogs-y                      += kernel-install
