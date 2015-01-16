@@ -2,6 +2,7 @@
 #define __PRINTK_H
 
 #include <linux/kern_levels.h>
+#include <linux/list.h>
 
 #ifdef VERBOSE_DEBUG
 #define LOGLEVEL	LOGLEVEL_VDEBUG
@@ -14,6 +15,8 @@
 #define printk			printf
 
 /* debugging and troubleshooting/diagnostic helpers. */
+
+struct device_d;
 
 #ifndef CONFIG_CONSOLE_NONE
 int dev_printf(int level, const struct device_d *dev, const char *format, ...)
