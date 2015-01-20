@@ -68,15 +68,9 @@ ENTRY(v7_mmu_cache_flush)
 ENDPROC(v7_mmu_cache_flush)
 
 ENTRY(__v7_mmu_cache_flush_invalidate)
-		mrc	p15, 0, r12, c0, c1, 5	@ read ID_MMFR1
-		tst	r12, #0xf << 16		@ hierarchical cache (ARMv7)
-		mov	r12, #0
-		beq	hierarchical
-		mcr	p15, 0, r12, c7, c14, 0	@ clean+invalidate D
-		b	iflush
-hierarchical:
 		stmfd	sp!, {r4-r11}
 		mov	r8, r0
+		mov	r12, #0
 		mcr	p15, 0, r12, c7, c10, 5	@ DMB
 		mrc	p15, 1, r0, c0, c0, 1	@ read clidr
 		ands	r3, r0, #0x7000000	@ extract loc from clidr
