@@ -1,3 +1,4 @@
+#include <linux/export.h>
 
 /*
  * Align to a 32 byte boundary equal to the
@@ -21,22 +22,24 @@
 #define PRE_IMAGE
 #endif
 
-#define INITCALLS			\
-	KEEP(*(.initcall.0))			\
-	KEEP(*(.initcall.1))			\
-	KEEP(*(.initcall.2))			\
-	KEEP(*(.initcall.3))			\
-	KEEP(*(.initcall.4))			\
-	KEEP(*(.initcall.5))			\
-	KEEP(*(.initcall.6))			\
-	KEEP(*(.initcall.7))			\
-	KEEP(*(.initcall.8))			\
-	KEEP(*(.initcall.9))			\
-	KEEP(*(.initcall.10))			\
-	KEEP(*(.initcall.11))			\
-	KEEP(*(.initcall.12))			\
-	KEEP(*(.initcall.13))			\
-	KEEP(*(.initcall.14))
+#define INITCALLS							\
+		VMLINUX_SYMBOL(__barebox_initcalls_start) = .;		\
+		KEEP(*(.initcall.0))					\
+		KEEP(*(.initcall.1))					\
+		KEEP(*(.initcall.2))					\
+		KEEP(*(.initcall.3))					\
+		KEEP(*(.initcall.4))					\
+		KEEP(*(.initcall.5))					\
+		KEEP(*(.initcall.6))					\
+		KEEP(*(.initcall.7))					\
+		KEEP(*(.initcall.8))					\
+		KEEP(*(.initcall.9))					\
+		KEEP(*(.initcall.10))					\
+		KEEP(*(.initcall.11))					\
+		KEEP(*(.initcall.12))					\
+		KEEP(*(.initcall.13))					\
+		KEEP(*(.initcall.14))					\
+		VMLINUX_SYMBOL(__barebox_initcalls_end) = .;
 
 #define EXITCALLS			\
 	KEEP(*(.exitcall.0))			\
@@ -47,24 +50,32 @@
 	KEEP(*(.exitcall.5))			\
 	KEEP(*(.exitcall.6))
 
-#define BAREBOX_CMDS	KEEP(*(SORT_BY_NAME(.barebox_cmd*)))
+#define BAREBOX_CMDS							\
+		VMLINUX_SYMBOL(__barebox_cmd_start) = .;		\
+		KEEP(*(SORT_BY_NAME(.barebox_cmd*)))			\
+		VMLINUX_SYMBOL(__barebox_cmd_end) = .;
 
-#define BAREBOX_SYMS	KEEP(*(__usymtab))
+#define BAREBOX_SYMS							\
+		VMLINUX_SYMBOL(__usymtab_start) = .;			\
+		KEEP(*(__usymtab))					\
+		VMLINUX_SYMBOL(__usymtab_end) = .;
 
-#define BAREBOX_MAGICVARS	KEEP(*(SORT_BY_NAME(.barebox_magicvar*)))
+#define BAREBOX_MAGICVARS						\
+		VMLINUX_SYMBOL(__barebox_magicvar_start) = .;		\
+		KEEP(*(SORT_BY_NAME(.barebox_magicvar*)))		\
+		VMLINUX_SYMBOL(__barebox_magicvar_end) = .;
 
-#define BAREBOX_CLK_TABLE()			\
-	. = ALIGN(8);				\
-	__clk_of_table_start = .;		\
-	KEEP(*(.__clk_of_table));		\
-	KEEP(*(.__clk_of_table_end));		\
-	__clk_of_table_end = .;
+#define BAREBOX_CLK_TABLE()						\
+		. = ALIGN(8);						\
+		VMLINUX_SYMBOL(__clk_of_table_start) = .;		\
+		KEEP(*(.__clk_of_table_*));				\
+		VMLINUX_SYMBOL(__clk_of_table_end) = .;
 
-#define BAREBOX_DTB()				\
-	. = ALIGN(8);				\
-	__dtb_start = .;			\
-	KEEP(*(.dtb.rodata.*));			\
-	__dtb_end = .;
+#define BAREBOX_DTB()							\
+		. = ALIGN(8);						\
+		VMLINUX_SYMBOL(__dtb_start) = .;			\
+		KEEP(*(.dtb.rodata.*));					\
+		VMLINUX_SYMBOL(__dtb_end) = .;
 
 #define BAREBOX_IMD				\
 	KEEP(*(.barebox_imd_start))		\

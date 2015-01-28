@@ -64,25 +64,15 @@ SECTIONS
 	.got : { *(.got) }
 
 	. = .;
-	___barebox_cmd_start = .;
 	.barebox_cmd : { BAREBOX_CMDS }
-	___barebox_cmd_end = .;
 
-	___barebox_magicvar_start = .;
 	.barebox_magicvar : { BAREBOX_MAGICVARS }
-	___barebox_magicvar_end = .;
 
-	___barebox_initcalls_start = .;
 	.barebox_initcalls : { INITCALLS }
-	___barebox_initcalls_end = .;
 
-	___barebox_exitcalls_start = .;
 	.barebox_exitcalls : { EXITCALLS }
-	___barebox_exitcalls_end = .;
 
-	___usymtab_start = .;
 	__usymtab : { BAREBOX_SYMS }
-	___usymtab_end = .;
 
 	__edata = .;
 	. = ALIGN(4);
