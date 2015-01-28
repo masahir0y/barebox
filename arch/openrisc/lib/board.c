@@ -20,6 +20,7 @@
 #include <malloc.h>
 #include <init.h>
 #include <memory.h>
+#include <start_barebox.h>
 #include <asm-generic/memory_layout.h>
 
 void __noreturn openrisc_start_barebox(void)

@@ -28,6 +28,7 @@
 #include <init.h>
 #include <environment.h>
 #include <memory.h>
+#include <start_barebox.h>
 #include <asm/cpu.h>
 #include <asm-generic/memory_layout.h>
 

@@ -113,7 +113,6 @@ unsigned long long strtoull_suffix(const char *str, char **endp, int base);
  */
 extern int (*barebox_main)(void);
 
-void __noreturn start_barebox(void);
 void shutdown_barebox(void);
 
 /*

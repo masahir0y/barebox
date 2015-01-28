@@ -18,6 +18,7 @@
 
 #include <common.h>
 #include <init.h>
+#include <start_barebox.h>
 #include <linux/sizes.h>
 #include <of.h>
 #include <asm/barebox-arm.h>
