@@ -759,7 +759,9 @@ config RESET_SOURCE
 	  of the reset and why the bootloader is currently running. It can be
 	  useful for any kind of system recovery or repair.
 
-endmenu
+source "arch/Kconfig"
+
+endmenu		# General settings
 
 menu "Debugging"
 
