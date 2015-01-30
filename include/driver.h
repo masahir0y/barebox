@@ -510,8 +510,11 @@ struct devfs_partition {
 int devfs_create_partitions(const char *devname,
 		const struct devfs_partition partinfo[]);
 
-#define DRV_OF_COMPAT(compat) \
-	IS_ENABLED(CONFIG_OFDEVICE) ? (compat) : NULL
+#ifdef CONFIG_OFDEVICE
+#define DRV_OF_COMPAT(compat)	(compat)
+#else
+#define DRV_OF_COMPAT(compat)	NULL
+#endif
 
 int dev_get_drvdata(struct device_d *dev, const void **data);
 
