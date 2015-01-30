@@ -19,6 +19,7 @@
 #ifndef DRIVER_H
 #define DRIVER_H
 
+#include <linux/compiler.h>
 #include <linux/list.h>
 #include <linux/ioport.h>
 #include <of.h>
