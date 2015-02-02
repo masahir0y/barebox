@@ -3,20 +3,10 @@
 
 #include <linux/kern_levels.h>
 
-#define MSG_EMERG      0    /* system is unusable */
-#define MSG_ALERT      1    /* action must be taken immediately */
-#define MSG_CRIT       2    /* critical conditions */
-#define MSG_ERR        3    /* error conditions */
-#define MSG_WARNING    4    /* warning conditions */
-#define MSG_NOTICE     5    /* normal but significant condition */
-#define MSG_INFO       6    /* informational */
-#define MSG_DEBUG      7    /* debug-level messages */
-#define MSG_VDEBUG     8    /* verbose debug messages */
-
 #ifdef VERBOSE_DEBUG
-#define LOGLEVEL	MSG_VDEBUG
+#define LOGLEVEL	LOGLEVEL_VDEBUG
 #elif defined DEBUG
-#define LOGLEVEL	MSG_DEBUG
+#define LOGLEVEL	LOGLEVEL_DEBUG
 #else
 #define LOGLEVEL	CONFIG_COMPILE_LOGLEVEL
 #endif
