@@ -9,6 +9,7 @@
 #define __initconst
 #define __exit
 #define __exitdata
+#define __exit_call
 
 /* For assembly routines */
 #define __BARE_INIT	.section ".text_bare_init.text","ax"

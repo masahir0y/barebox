@@ -14,8 +14,6 @@
 
 typedef int     gfp_t;
 
-#define __init
-
 #define MODULE_AUTHOR(x)
 #define MODULE_DESCRIPTION(x)
 #define MODULE_LICENSE(x)
@@ -34,10 +32,6 @@ static inline void spin_unlock_irqrestore(spinlock_t *lock, unsigned long flags)
 struct mutex { int i; };
 
 struct rw_semaphore { int i; };
-
-#define __user
-#define __init
-#define __exit
 
 #define init_rwsem(...)			do { } while (0)
 #define down_read(...)			do { } while (0)
