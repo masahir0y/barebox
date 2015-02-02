@@ -1,6 +1,8 @@
 #ifndef __PRINTK_H
 #define __PRINTK_H
 
+#include <linux/kern_levels.h>
+
 #define MSG_EMERG      0    /* system is unusable */
 #define MSG_ALERT      1    /* action must be taken immediately */
 #define MSG_CRIT       2    /* critical conditions */
@@ -18,6 +20,8 @@
 #else
 #define LOGLEVEL	CONFIG_COMPILE_LOGLEVEL
 #endif
+
+#define printk			printf
 
 /* debugging and troubleshooting/diagnostic helpers. */
 
@@ -83,6 +87,7 @@ static inline int pr_print(int level, const char *format, ...)
 #define pr_crit(fmt, arg...)	__pr_printk(2, pr_fmt(fmt), ##arg)
 #define pr_err(fmt, arg...)	__pr_printk(3, pr_fmt(fmt), ##arg)
 #define pr_warning(fmt, arg...)	__pr_printk(4, pr_fmt(fmt), ##arg)
+#define pr_warn pr_warning
 #define pr_notice(fmt, arg...)	__pr_printk(5, pr_fmt(fmt), ##arg)
 #define pr_info(fmt, arg...)	__pr_printk(6, pr_fmt(fmt), ##arg)
 #define pr_debug(fmt, arg...)	__pr_printk(7, pr_fmt(fmt), ##arg)

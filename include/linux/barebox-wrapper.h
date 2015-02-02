@@ -10,23 +10,9 @@
 #define vzalloc(len)		kzalloc(len, 0)
 #define vfree(ptr)		free(ptr)
 
-#define KERN_EMERG      ""   /* system is unusable                   */
-#define KERN_ALERT      ""   /* action must be taken immediately     */
-#define KERN_CRIT       ""   /* critical conditions                  */
-#define KERN_ERR        ""   /* error conditions                     */
-#define KERN_WARNING    ""   /* warning conditions                   */
-#define KERN_NOTICE     ""   /* normal but significant condition     */
-#define KERN_INFO       ""   /* informational                        */
-#define KERN_DEBUG      ""   /* debug-level messages                 */
-#define KERN_CONT       ""
-
 #define GFP_KERNEL	0
 
 typedef int     gfp_t;
-
-#define printk			printf
-
-#define pr_warn			pr_warning
 
 #define __init
 
