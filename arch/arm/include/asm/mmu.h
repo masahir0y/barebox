@@ -5,7 +5,7 @@
 #include <errno.h>
 #include <malloc.h>
 #include <xfuncs.h>
-
+#include <init.h>
 #include <asm/pgtable.h>
 
 #define PMD_SECT_DEF_UNCACHED (PMD_SECT_AP_WRITE | PMD_SECT_AP_READ | PMD_TYPE_SECT)
