@@ -12,8 +12,6 @@
 
 #define GFP_KERNEL	0
 
-typedef int     gfp_t;
-
 #define MODULE_AUTHOR(x)
 #define MODULE_DESCRIPTION(x)
 #define MODULE_LICENSE(x)
