@@ -19,6 +19,7 @@
 #include <common.h>
 #include <boot.h>
 #include <malloc.h>
+#include <xfuncs.h>
 #include <magicvar.h>
 #include <globalvar.h>
 #include <environment.h>

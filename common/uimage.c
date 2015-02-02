@@ -20,6 +20,7 @@
 #include <common.h>
 #include <image.h>
 #include <malloc.h>
+#include <xfuncs.h>
 #include <errno.h>
 #include <libbb.h>
 #include <libfile.h>

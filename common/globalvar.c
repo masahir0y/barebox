@@ -1,5 +1,6 @@
 #include <common.h>
 #include <malloc.h>
+#include <xfuncs.h>
 #include <globalvar.h>
 #include <errno.h>
 #include <init.h>

@@ -17,6 +17,7 @@
  */
 #include <common.h>
 #include <malloc.h>
+#include <xfuncs.h>
 #include <errno.h>
 #include <init.h>
 #include <linux/ioport.h>

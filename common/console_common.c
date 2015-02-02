@@ -29,6 +29,7 @@
 #include <password.h>
 #include <clock.h>
 #include <malloc.h>
+#include <xfuncs.h>
 #include <asm-generic/div64.h>
 
 #ifndef CONFIG_CONSOLE_NONE

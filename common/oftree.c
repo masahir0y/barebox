@@ -5,6 +5,7 @@
 #include <command.h>
 #include <fs.h>
 #include <malloc.h>
+#include <xfuncs.h>
 #include <linux/ctype.h>
 #include <asm/byteorder.h>
 #include <errno.h>

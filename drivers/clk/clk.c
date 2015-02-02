@@ -17,6 +17,7 @@
 #include <common.h>
 #include <errno.h>
 #include <malloc.h>
+#include <xfuncs.h>
 #include <linux/clk.h>
 #include <linux/err.h>
 

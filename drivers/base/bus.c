@@ -5,6 +5,7 @@
  */
 
 #include <common.h>
+#include <xfuncs.h>
 #include <driver.h>
 #include <errno.h>
 #include <of.h>

@@ -2,6 +2,7 @@
 #define __LOADER_H__
 
 #include <linux/list.h>
+#include <xfuncs.h>
 #include <menu.h>
 
 struct blspec {

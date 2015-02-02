@@ -8,6 +8,7 @@
 #include <binfmt.h>
 #include <libbb.h>
 #include <malloc.h>
+#include <xfuncs.h>
 #include <command.h>
 #include <errno.h>
 

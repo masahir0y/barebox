@@ -19,6 +19,7 @@
 #include <common.h>
 #include <block.h>
 #include <malloc.h>
+#include <xfuncs.h>
 #include <linux/err.h>
 #include <linux/list.h>
 #include <dma.h>
