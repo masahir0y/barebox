@@ -12,6 +12,7 @@ pbl-y			+= div64.o
 obj-y			+= misc.o
 obj-$(CONFIG_PARAMETER)	+= parameter.o
 obj-y			+= xfuncs.o
+obj-y			+= linux_compat.o
 obj-y			+= getopt.o
 obj-y			+= readkey.o
 obj-y			+= kfifo.o

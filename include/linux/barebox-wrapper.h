@@ -1,16 +1,26 @@
 #ifndef __INCLUDE_LINUX_BAREBOX_WRAPPER_H
 #define __INCLUDE_LINUX_BAREBOX_WRAPPER_H
 
-#include <xfuncs.h>
+#include <linux/types.h>
 
-#define kmalloc(len, mode)	malloc(len)
-#define kzalloc(len, mode)	xzalloc(len)
-#define vmalloc(len)		malloc(len)
+#define GFP_KERNEL	0
+#define __GFP_ZERO		0x8000u
+
+void *kmalloc(size_t size, gfp_t flags);
+
+/**
+ * kzalloc - allocate memory. The memory is set to zero.
+ * @size: how many bytes of memory are required.
+ * @flags: the type of memory to allocate (see kmalloc).
+ */
+static inline void *kzalloc(size_t size, gfp_t flags)
+{
+	return kmalloc(size, flags | __GFP_ZERO);
+}
+#define vmalloc(len)		kmalloc(len, 0)
 #define kfree(ptr)		free(ptr)
 #define vzalloc(len)		kzalloc(len, 0)
 #define vfree(ptr)		free(ptr)
-
-#define GFP_KERNEL	0
 
 #define MODULE_AUTHOR(x)
 #define MODULE_DESCRIPTION(x)
