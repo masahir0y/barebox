@@ -1,0 +1,8 @@
+CROSS_COMPILE_arm=arm-linux-gnueabi-
+CROSS_COMPILE_blackfin=bfin-elf-
+CROSS_COMPILE_efi=i386-linux-
+CROSS_COMPILE_mips=mips-linux-
+CROSS_COMPILE_nios2=nios2-linux-
+CROSS_COMPILE_openrisc=or32-linux-
+CROSS_COMPILE_ppc=powerpc-linux-
+CROSS_COMPILE_x86=i386-linux-
