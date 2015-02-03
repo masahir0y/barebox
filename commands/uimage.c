@@ -23,7 +23,7 @@ static int uimage_flush(void *buf, unsigned int len)
 static int do_uimage(int argc, char *argv[])
 {
 	struct uimage_handle *handle;
-	int ret;
+	int ret = 0;
 	int verify = 0;
 	int fd;
 	int opt;
