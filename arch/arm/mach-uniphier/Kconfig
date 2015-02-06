@@ -4,31 +4,37 @@ config MACH_PH1_LD4
 	bool "PH1-LD4"
 	default y
 	help
-	  PH1-LD4 support
+	  PH1-LD4 SoC support
 
 config MACH_PH1_PRO4
 	bool "PH1-Pro4"
 	default y
 	help
-	  PH1-Pro4 support
+	  PH1-Pro4 SoC support
 
 config MACH_PH1_SLD8
 	bool "PH1-sLD8"
 	default y
 	help
-	  PH1-sLD8 support
+	  PH1-sLD8 SoC support
 
 config MACH_PH1_PRO5
 	bool "PH1-Pro5"
 	default y
 	help
-	  PH1-sLD8 support
+	  PH1-sLD8 SoC support
+
+config MACH_PROXSTREAM2
+	bool "ProXstream2"
+	default y
+	help
+	  ProXstream2 SoC support
 
 config MACH_PH1_LD6B
 	bool "PH1-LD6b"
 	default y
 	help
-	  PH1-LD6b support
+	  PH1-LD6b SoC support
 
 config UNIPHIER_NOR_BOOT
 	bool "Support NOR Boot"
@@ -50,7 +56,7 @@ config UNIPHIER_EMMC_BOOT
 
 config UNIPHIER_USB_BOOT
 	bool "Support USB Boot"
-	depends on MACH_PH1_SLD8
+	depends on MACH_PROXSTREAM2
 	default y
 	help
 	  Support USB Boot

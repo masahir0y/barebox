@@ -31,12 +31,17 @@ enum uniphier_soc_id uniphier_get_soc_type(void)
 		break;
 #endif
 #ifdef CONFIG_MACH_PH1_PRO5
-	case 0x30:
+	case 0x2A:
 		ret = SOC_UNIPHIER_PH1_PRO5;
 		break;
 #endif
+#ifdef CONFIG_MACH_PROXSTREAM2
+	case 0x2E:
+		ret = SOC_UNIPHIER_PROXSTREAM2;
+		break;
+#endif
 #ifdef CONFIG_MACH_PH1_LD6B
-	case 0x31:
+	case 0x2F:
 		ret = SOC_UNIPHIER_PH1_LD6B;
 		break;
 #endif

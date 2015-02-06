@@ -1,0 +1,1 @@
+lwl-y += entry.o

@@ -14,6 +14,7 @@ static int get_dram_ch1_base(resource_size_t *base)
 	case SOC_UNIPHIER_PH1_LD4:
 	case SOC_UNIPHIER_PH1_SLD8:
 	case SOC_UNIPHIER_PH1_PRO5:
+	case SOC_UNIPHIER_PROXSTREAM2:
 	case SOC_UNIPHIER_PH1_LD6B:
 		*base = 0xc0000000;
 		break;

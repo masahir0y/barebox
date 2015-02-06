@@ -15,3 +15,6 @@ lwl-$(CONFIG_UNIPHIER_USB_BOOT) += usb_load.o
 obj-$(CONFIG_MACH_PH1_LD4)	+= ph1-ld4/
 obj-$(CONFIG_MACH_PH1_PRO4)	+= ph1-pro4/
 obj-$(CONFIG_MACH_PH1_SLD8)	+= ph1-sld8/
+obj-$(CONFIG_MACH_PH1_PRO5)	+= ph1-pro5/
+obj-$(CONFIG_MACH_PROXSTREAM2)	+= ph1-ld6b/
+obj-$(CONFIG_MACH_PH1_LD6B)	+= ph1-ld6b/
