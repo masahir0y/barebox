@@ -3,16 +3,13 @@
 
 #include <linux/compiler.h>
 
-#define BUG() do { \
-	printf("BUG: failure at %s:%d/%s()!\n", __FILE__, __LINE__, __FUNCTION__); \
-	panic("BUG!"); \
-} while (0)
+void __noreturn __bug(const char *file, unsigned int line, const char *func);
+void __warn(const char *file, unsigned int line, const char *func);
+
+#define BUG()		__bug(__FILE__, __LINE__, __FUNCTION__)
+#define __WARN()	__warn(__FILE__, __LINE__, __FUNCTION__)
+
 #define BUG_ON(condition) do { if (unlikely((condition)!=0)) BUG(); } while(0)
-
-
-#define __WARN() do { 								\
-	printf("WARNING: at %s:%d/%s()!\n", __FILE__, __LINE__, __FUNCTION__);	\
-} while (0)
 
 #ifndef WARN_ON
 #define WARN_ON(condition) ({						\

@@ -22,6 +22,7 @@
 #include <led.h>
 #include <of.h>
 #include <restart.h>
+#include <linux/bug.h>
 
 int errno;
 EXPORT_SYMBOL(errno);
@@ -207,3 +208,16 @@ void __noreturn panic(const char *fmt, ...)
 	}
 }
 EXPORT_SYMBOL(panic);
+
+void __noreturn __bug(const char *file, unsigned int line, const char *func)
+{
+	printk("BUG: failure at %s:%d/%s()!\n", file, line, func);
+	panic("BUG!");
+}
+EXPORT_SYMBOL(__bug);
+
+void __warn(const char *file, unsigned int line, const char *func)
+{
+	printf("WARNING: at %s:%d/%s()!\n", file, line, func);
+}
+EXPORT_SYMBOL(__warn);
