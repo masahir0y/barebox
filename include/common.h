@@ -135,31 +135,4 @@ const char *barebox_get_hostname(void);
 void barebox_set_hostname(const char *);
 void barebox_set_hostname_no_overwrite(const char *);
 
-#ifndef IOMEM
-#define IOMEM(addr)	((void __force __iomem *)(addr))
-#endif
-
-/*
- * Check if two regions overlap. returns true if they do, false otherwise
- */
-static inline bool region_overlap(unsigned long starta, unsigned long lena,
-		unsigned long startb, unsigned long lenb)
-{
-	if (starta + lena <= startb)
-		return 0;
-	if (startb + lenb <= starta)
-		return 0;
-	return 1;
-}
-
-static inline bool lregion_overlap(loff_t starta, loff_t lena,
-				   loff_t startb, loff_t lenb)
-{
-	if (starta + lena <= startb)
-		return 0;
-	if (startb + lenb <= starta)
-		return 0;
-	return 1;
-}
-
 #endif	/* __COMMON_H_ */
