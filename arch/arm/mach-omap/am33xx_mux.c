@@ -13,7 +13,6 @@
  * GNU General Public License for more details.
  */
 #include <common.h>
-#include <config.h>
 #include <asm/io.h>
 #include <mach/am33xx-mux.h>
 #include <mach/am33xx-silicon.h>

@@ -17,7 +17,6 @@
  * GNU General Public License for more details.
  *
  */
-#include <config.h>
 #include <common.h>
 #include <dma.h>
 #include <driver.h>
