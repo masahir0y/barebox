@@ -10,3 +10,7 @@ obj-$(CONFIG_ARCH_S5PCxx) += gpio-s5pcxx.o clocks-s5pcxx.o mem-s5pcxx.o
 pbl-$(CONFIG_ARCH_S5PCxx) += mem-s5pcxx.o
 obj-$(CONFIG_BAREBOX_UPDATE_NAND_S3C24XX) += bbu-nand-s3c24x0.o
 obj-$(CONFIG_S3C_LOWLEVEL_INIT) += $(obj-lowlevel-y)
+
+obj-$(CONFIG_MACH_A9M2410)	+= a9m2410
+obj-$(CONFIG_MACH_A9M2440)	+= a9m2440
+obj-$(CONFIG_MACH_MINI2440)	+= friendlyarm-mini2440

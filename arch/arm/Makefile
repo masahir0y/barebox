@@ -116,10 +116,7 @@ machine-$(CONFIG_ARCH_QEMU)		:= qemu
 # These are here only because they have a board specific config.h.
 # TODO: Get rid of board specific config.h and move these to
 # arch/arm/boards/Makefile aswell.
-board-$(CONFIG_MACH_A9M2410)			+= a9m2410
-board-$(CONFIG_MACH_A9M2440)			+= a9m2440
 board-$(CONFIG_MACH_AT91RM9200EK)		+= at91rm9200ek
-board-$(CONFIG_MACH_MINI2440)			+= friendlyarm-mini2440
 board-$(CONFIG_MACH_MINI6410)			+= friendlyarm-mini6410
 board-$(CONFIG_MACH_PCM027)			+= phytec-phycore-pxa270
 board-$(CONFIG_MACH_TINY210)			+= friendlyarm-tiny210
