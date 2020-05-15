@@ -4,7 +4,6 @@
  *
  */
 
-#include <config.h>
 #include <mach/imx27-regs.h>
 #include <asm/barebox-arm-head.h>
 

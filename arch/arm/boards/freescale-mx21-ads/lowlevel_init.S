@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 // SPDX-FileCopyrightText: 2010 Jaccon Bastiaansen <jaccon.bastiaansen@gmail.com>
 
-#include <config.h>
 #include <linux/sizes.h>
 #include <asm-generic/memory_layout.h>
 #include <mach/imx21-regs.h>

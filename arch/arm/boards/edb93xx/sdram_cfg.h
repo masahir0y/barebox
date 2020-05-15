@@ -2,7 +2,6 @@
 // SPDX-FileCopyrightText: 2009 Matthias Kaehlcke <matthias@kaehlcke.net>
 // SPDX-FileCopyrightText: 2006 Dominic Rath <Dominic.Rath@gmx.de>
 
-#include <config.h>
 #include <mach/ep93xx-regs.h>
 
 #define SDRAM_BASE_ADDR		CONFIG_EP93XX_SDRAM_BANK0_BASE

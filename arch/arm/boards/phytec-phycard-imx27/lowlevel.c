@@ -7,7 +7,6 @@
 #include <common.h>
 #include <init.h>
 #include <io.h>
-#include <config.h>
 #include <asm/barebox-arm.h>
 #include <asm/barebox-arm-head.h>
 #include <mach/imx27-regs.h>
