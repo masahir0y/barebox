@@ -6,6 +6,9 @@ config OPENRISC
 	select GENERIC_FIND_NEXT_BIT
 	default y
 
+config CPU_BIG_ENDIAN
+	def_bool y
+
 # not used
 config ARCH_TEXT_BASE
 	hex

@@ -18,5 +18,8 @@ config ARCH_MPC85XX
 	bool "Freescale MPC85xx"
 endchoice
 
+config CPU_BIG_ENDIAN
+	def_bool y
+
 source "arch/powerpc/mach-mpc5xxx/Kconfig"
 source "arch/powerpc/mach-mpc85xx/Kconfig"
