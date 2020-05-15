@@ -2,7 +2,6 @@
  * Low level initialization for the FriendlyARM mini2440 board
  */
 
-#include <config.h>
 #include <linux/sizes.h>
 #include <mach/s3c-iomap.h>
 #include <asm/barebox-arm-head.h>

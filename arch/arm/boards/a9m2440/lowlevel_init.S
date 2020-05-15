@@ -2,7 +2,6 @@
  *
  */
 
-#include <config.h>
 #include <linux/sizes.h>
 #include <mach/s3c-iomap.h>
 #include <mach/s3c24xx-gpio.h>
